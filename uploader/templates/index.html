@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col border border-1">
+            <form id="upload-file" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <div class="custom-file">
+                        <input type="file" name="imgfile" class="custom-file-input" id="imageFile"/>
+                        <label class="custom-file-label" for="imageFile">Choose file</label>
+                    </div>
+                </div>
+                <button id="detect-btn" type="button" class="btn btn-primary">Detect</button>
+                <label name="result" type="text" id="predict_result" value="" >
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <img class="img-fluid img-thumbnail" id="image_preview" src="#" alt="Image">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts%}
+<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+
+{% endblock%}
